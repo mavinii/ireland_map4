@@ -3,10 +3,9 @@ import { View, Text, Image, StyleSheet, Button } from 'react-native';
 import { useRoute } from '@react-navigation/native';
 
 // Details Screen
-export default function DetailsScreen({ route, navigation }) {
+export default function DetailsScreen( { route, navigation } ) {
     
-    // 2. Get the param from the home screen
-    const { itemId, otherParam } = route.params;
+    // Get the param from the home screen
     const { name, gaelic_name, latitude, longitude } = route.params;
   
     return (
