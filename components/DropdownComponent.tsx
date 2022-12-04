@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { StyleSheet, View, Text } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 import { Dropdown } from 'react-native-element-dropdown';
 
 const data = [
@@ -46,11 +46,20 @@ export default function DropdownComponent() {
 
 const styles = StyleSheet.create({
     container: {
-        flex: 1,
-        backgroundColor: 'white',
-        padding: 16,
-        justifyContent: 'center',
-        alignItems: 'center',
+      position: 'absolute',
+      width: '90%',
+      top: 20,
+      backgroundColor: 'white',
+      borderRadius: 8,
+      shadowColor: '#000',
+      shadowOffset: {
+        width: 0,
+        height: 2,
+      },
+      shadowOpacity: 0.30,
+      shadowRadius: 3.84,
+      elevation: 5,
+      padding: 8,
     },
     dropdown: {
       height: 50,
@@ -58,9 +67,6 @@ const styles = StyleSheet.create({
       borderWidth: 0.5,
       borderRadius: 8,
       paddingHorizontal: 8,
-    },
-    icon: {
-      marginRight: 5,
     },
     label: {
       position: 'absolute',
