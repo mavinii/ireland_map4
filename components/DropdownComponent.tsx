@@ -61,7 +61,7 @@ export default function DropdownComponent() {
           maxHeight={300}
           labelField="label"
           valueField="value"
-          placeholder={!isFocus ? 'Select item' : '...'}
+          placeholder={!isFocus ? 'Select a place' : '...'}
           searchPlaceholder="Search..."
           value={value}
           onFocus={() => setIsFocus(true)}
@@ -71,12 +71,15 @@ export default function DropdownComponent() {
             setIsFocus(false);
           }}
         />
+
+        {/* TODO: Display the API name and local to the details screen */}
         <View>
           <TouchableOpacity 
             onPress={() => nav.navigate('Details', {
-              data2, getPlacesTypeName
+              label: data[value - 1].label,
+              value: data[value - 1].value,
             })}>
-            <Text style={styles.text}>Go to Details</Text>
+            <Text style={styles.detailsButton}>Go to Details</Text>
           </TouchableOpacity>
         </View>
       </View>
@@ -129,5 +132,10 @@ const styles = StyleSheet.create({
     inputSearchStyle: {
       height: 40,
       fontSize: 16,
+    },
+    detailsButton: {
+      fontSize: 13,
+      marginTop: 7,
+      color: 'blue',
     },
   });

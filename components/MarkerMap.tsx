@@ -57,7 +57,7 @@ export default function MarkerMap(){
               pinColor={GetMarkColor(marker['place_type_id'])}>
                 
                 {/* These are the informations that appeared when marker is pressed */}
-                <Callout>
+                <Callout >
                     <View>
                         <Text style={styles.placeName}>{marker['name']}</Text>
                         <Text style={styles.gaelicPlaceName}>In Gaelic: {marker['gaelic_name'] ? marker['gaelic_name']: 'Not Available'}</Text>
@@ -70,7 +70,7 @@ export default function MarkerMap(){
                             latitude: marker['latitude'],
                             longitude: marker['longitude'],
                         })}>
-                        <Text style={styles.detailsButton}>Details</Text>
+                        <Text style={styles.detailsButton}>Go to Details</Text>
                     </TouchableOpacity>
                 </Callout>
             </Marker>

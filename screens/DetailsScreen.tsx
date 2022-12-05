@@ -6,13 +6,16 @@ import { useRoute } from '@react-navigation/native';
 export default function DetailsScreen( { route, navigation } ) {
     
     // Get the param from the home screen
-    const { name, gaelic_name, latitude, longitude } = route.params;
+    const {label, value, name, gaelic_name, latitude, longitude } = route.params;
   
     return (
       <View>
         <Image 
           source={{ uri: `https://picsum.photos/id/${Math.floor(Math.random() * 10)}/200/300` }}
           style={style.placeImage} />
+
+        <Text style={style.placeName}>Label: {label}</Text>
+        <Text style={style.placeName}>Valeu: {value}</Text>
 
         <Text style={style.placeName}>Name: {name}</Text>
         <Text style={style.gaelicName}>Gaelic Name: {gaelic_name}</Text>
