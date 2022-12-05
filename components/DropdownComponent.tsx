@@ -1,6 +1,8 @@
 import * as React from 'react';
 import { StyleSheet, View } from 'react-native';
 import { Dropdown } from 'react-native-element-dropdown';
+import Constants from 'expo-constants';
+import { useEffect, useState } from 'react';
 
 const data = [
     { label: 'Item 1', value: '1' },
@@ -17,6 +19,30 @@ export default function DropdownComponent() {
     const [value, setValue] = React.useState(null);
     const [isFocus, setIsFocus] = React.useState(false);
 
+    // Marker position and Map position
+    const [data1, setPlaceMarkers] = useState([]);
+    const [data2, setPlaceTypes] = useState([]);
+
+        // Places API and Places Types API
+    useEffect(() => {
+      Promise.all([
+          fetch('https://gist.githubusercontent.com/saravanabalagi/541a511eb71c366e0bf3eecbee2dab0a/raw/bb1529d2e5b71fd06760cb030d6e15d6d56c34b3/places.json'),
+          fetch('https://gist.githubusercontent.com/saravanabalagi/541a511eb71c366e0bf3eecbee2dab0a/raw/bb1529d2e5b71fd06760cb030d6e15d6d56c34b3/place_types.json'),
+      ])
+      .then(([dataMarkers, dataPlaceTypes]) => 
+          Promise.all([dataMarkers.json(), dataPlaceTypes.json()])
+      )
+      .then(([data1, data2]) => {
+          setPlaceMarkers(data1);
+          setPlaceTypes(data2);
+        });
+    }, []);
+
+    // function that returns the place type
+    function getPlacesTypeName(place_type_id: number) {
+      return data2[place_type_id];
+    }
+
     return (
       <View style={styles.container}>
         <Dropdown
@@ -25,10 +51,10 @@ export default function DropdownComponent() {
           selectedTextStyle={styles.selectedTextStyle}
           inputSearchStyle={styles.inputSearchStyle}
           iconStyle={styles.iconStyle}
-          data={data}
+          data={data1}
           search
           maxHeight={300}
-          labelField="label"
+          labelField="name"
           valueField="value"
           placeholder={!isFocus ? 'Select item' : '...'}
           searchPlaceholder="Search..."
@@ -48,7 +74,7 @@ const styles = StyleSheet.create({
     container: {
       position: 'absolute',
       width: '90%',
-      top: 20,
+      top: Constants.statusBarHeight,
       backgroundColor: 'white',
       borderRadius: 8,
       shadowColor: '#000',
