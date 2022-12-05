@@ -1,5 +1,5 @@
-import { useNavigation } from '@react-navigation/native';
 import * as React from 'react';
+import { useNavigation } from '@react-navigation/native';
 import { useEffect, useState } from 'react';
 import { TouchableOpacity, StyleSheet, View, Text } from 'react-native';
 import MapView, { Callout, Marker } from 'react-native-maps';
@@ -25,15 +25,15 @@ export default function MarkerMap(){
     // Places API and Places Types API
     useEffect(() => {
         Promise.all([
-        fetch('https://gist.githubusercontent.com/saravanabalagi/541a511eb71c366e0bf3eecbee2dab0a/raw/bb1529d2e5b71fd06760cb030d6e15d6d56c34b3/places.json'),
-        fetch('https://gist.githubusercontent.com/saravanabalagi/541a511eb71c366e0bf3eecbee2dab0a/raw/bb1529d2e5b71fd06760cb030d6e15d6d56c34b3/place_types.json'),
+            fetch('https://gist.githubusercontent.com/saravanabalagi/541a511eb71c366e0bf3eecbee2dab0a/raw/bb1529d2e5b71fd06760cb030d6e15d6d56c34b3/places.json'),
+            fetch('https://gist.githubusercontent.com/saravanabalagi/541a511eb71c366e0bf3eecbee2dab0a/raw/bb1529d2e5b71fd06760cb030d6e15d6d56c34b3/place_types.json'),
         ])
         .then(([dataMarkers, dataPlaceTypes]) => 
-        Promise.all([dataMarkers.json(), dataPlaceTypes.json()])
+            Promise.all([dataMarkers.json(), dataPlaceTypes.json()])
         )
         .then(([data1, data2]) => {
-        setPlaceMarkers(data1);
-        setPlaceTypes(data2);
+            setPlaceMarkers(data1);
+            setPlaceTypes(data2);
         });
     }, []);
 
