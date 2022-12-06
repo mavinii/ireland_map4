@@ -8,7 +8,6 @@ import Constants from 'expo-constants';
 // This function displays the dropdown menu on the main screen
 export default function MapScreen() {
 
-  const [value, setValue] = React.useState(null);
   const [isFocus, setIsFocus] = React.useState(false);
   const [search, setSearch] = useState(0);
 
@@ -47,14 +46,12 @@ export default function MapScreen() {
             maxHeight={300}
             labelField="label"
             valueField="id"
-            placeholder={!isFocus ? 'Select item' : '...'}
+            placeholder={!isFocus ? 'Select a place' : '...'}
             searchPlaceholder="Search..."
-            value={value}
             onFocus={() => setIsFocus(true)}
             onBlur={() => setIsFocus(false)}
             onChange={value => {
               setSearch(value.id);
-              setIsFocus(false);
             }}/>
         </View>              
     </View>          
@@ -65,7 +62,7 @@ export default function MapScreen() {
 const styles = StyleSheet.create({
   container: {
     position: 'absolute',
-    top: Constants.statusBarHeight + 45,
+    top: Constants.statusBarHeight + 50,
     left: 0,
     right: 0,
     zIndex: 1,

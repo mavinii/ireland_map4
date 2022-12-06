@@ -2,7 +2,7 @@ import * as React from 'react';
 import { useNavigation } from '@react-navigation/native';
 import { useEffect, useState } from 'react';
 import { TouchableOpacity, StyleSheet, View, Text, Dimensions } from 'react-native';
-import MapView, { Callout, Marker } from 'react-native-maps';
+import MapView, { Callout, Circle, Marker } from 'react-native-maps';
 import GetMarkColor from './MarkerColor';
 
 // Map initial location
@@ -36,18 +36,22 @@ export default function MarkerMap(props: { filter: any; }){
     return(
         <View>
             {/* This is the Map with inicial position */}
+            {/* Please check the documentation for more information: https://github.com/react-native-maps/react-native-maps */}
             <MapView 
                 style={styles.map} 
                 initialRegion={INITIAL_POSITION}>
+
                     {data.map((marker, index) => {
                         return marker['place_type_id'] === filter || filter === 0 ? (
         
                 // This is the marker of the map
-                <Marker
+                <Marker 
+                    draggable
                     key={index}
                     coordinate={{ latitude: marker['latitude'], longitude: marker['longitude'] }}
+                    onDragEnd={(e) => console.log(e.nativeEvent.coordinate)}            
                     pinColor={GetMarkColor(marker['place_type_id'])}>
-                        
+                            
                     {/* These are the informations that appeared when marker is pressed */}
                     <Callout >
                         <View>
