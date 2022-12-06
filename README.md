@@ -35,7 +35,7 @@ The objective of this project is to develop a mobile app to showcase in map plac
 
 ## Allow filtering by Place Type:
 - [x] Show dropdown for selecting Place Type, default value should be all.
-- [ ] When a specific Place Type is selected, show only the places with this Place Type on the map.
+- [x] When a specific Place Type is selected, show only the places with this Place Type on the map.
 
 ## Allow custom marker:
 - [ ] Long Press anywhere on map to show a draggable marker.

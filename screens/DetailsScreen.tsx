@@ -1,12 +1,12 @@
+import { useNavigation } from '@react-navigation/native';
 import * as React from 'react';
 import { View, Text, Image, StyleSheet, Button } from 'react-native';
-import { useRoute } from '@react-navigation/native';
 
 // Details Screen
 export default function DetailsScreen( { route, navigation } ) {
     
     // Get the param from the home screen
-    const {label, value, name, gaelic_name, latitude, longitude } = route.params;
+    const {name, gaelic_name,  marker_type, latitude, longitude } = route.params;
   
     return (
       <View>
@@ -14,11 +14,9 @@ export default function DetailsScreen( { route, navigation } ) {
           source={{ uri: `https://picsum.photos/id/${Math.floor(Math.random() * 10)}/200/300` }}
           style={style.placeImage} />
 
-        <Text style={style.placeName}>Label: {label}</Text>
-        <Text style={style.placeName}>Valeu: {value}</Text>
-
         <Text style={style.placeName}>Name: {name}</Text>
         <Text style={style.gaelicName}>Gaelic Name: {gaelic_name}</Text>
+        <Text style={style.placeType}>Place Type: {marker_type}</Text>
         <Text style={style.latitude}>Latitude: {latitude}</Text>
         <Text style={style.longitude}>Longitude: {longitude}</Text>
 
@@ -38,6 +36,10 @@ const style = StyleSheet.create({
     marginBottom: 4,
   },
   gaelicName: {
+    fontSize: 15,
+    marginBottom: 5,
+  },
+  placeType: {
     fontSize: 15,
     marginBottom: 5,
   },

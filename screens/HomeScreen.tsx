@@ -1,21 +1,18 @@
 import * as React from 'react';
 import { StyleSheet, View } from 'react-native';
 
-import MarkerMap from '../components/MarkerMap';
-
-import DropdownComponent from '../components/DropdownComponent';
+import MapScreen from '../components/MapScreen';
 
 // Home Screen
 export default function HomeScreen() {
-
     return (
         <View style={styles.container}>
-            <MarkerMap />
+            <MapScreen />
         </View>
     );
 }
 
-// Styles
+// Home Screen Styles
 const styles = StyleSheet.create({
     container: {
         flex: 1,
