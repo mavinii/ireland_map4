@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { StyleSheet, View } from 'react-native';
 
+// importing Maps
 import MapScreen from '../components/MapScreen';
 
 // Home Screen

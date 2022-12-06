@@ -5,13 +5,12 @@ import MarkerMap from "./MapMarker";
 import { Dropdown } from "react-native-element-dropdown";
 import Constants from 'expo-constants';
 
+// This function displays the dropdown menu on the main screen
 export default function MapScreen() {
 
   const [value, setValue] = React.useState(null);
   const [isFocus, setIsFocus] = React.useState(false);
-
-    const navigation = useNavigation();
-    const [search, setSearch] = useState(0);
+  const [search, setSearch] = useState(0);
 
     const PlaceTypeName = [
         { label: "Show all places", id: 0 },
