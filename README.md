@@ -34,7 +34,7 @@ The objective of this project is to develop a mobile app to showcase in map plac
 - [x] Show a back button, when pressed, go back to map view.
 
 ## Allow filtering by Place Type:
-- [ ] Show dropdown for selecting Place Type, default value should be all.
+- [x] Show dropdown for selecting Place Type, default value should be all.
 - [ ] When a specific Place Type is selected, show only the places with this Place Type on the map.
 
 ## Allow custom marker:
