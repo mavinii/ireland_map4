@@ -43,6 +43,41 @@ The objective of this project is to develop a mobile app to showcase in map plac
 - [ ] Draw a semi-transparent blue circle around this marker with a radius of 10 km and show number of places within this radius.
 - [ ] Create a slider to control the above radius in km (1-1000, default 10) and on change, update the circle on the map and update number of places within the radius info shown accordingly.
 
+
+# Student Report
+This is my report about this project. I will explain the steps I took to create this project, the challenges I faced and how I solved them.
+
+## What was easy:
+Displaying the Apple Map was an easy thing, along with the colour of the marks but apart from that, everything else was unbelieve hard!
+
+## What was challenge:
+The Marks and Long Press implementation were a challenge.
+
+## What I failed:
+I have failed to implement these features:
+1. The first thing was to implement the navigation with icons, it was driven me crazy, even
+though react native has good documentation, I was having issues letting the two button
+icons work and after some hours, it was done.
+2. Displaying the Map was easy, but displaying the markers took me so many days.
+3. To fetch the data from the two links given, and to understand how to fetch in react native
+works.
+4. Show the distance to the nearest place and update it with drag and drop marker.
+5. Drawing the blue circle radios was also not implemented.
+
+## What I accomplished:
+- The button details take the user to the next screen.
+- The dropdown menu was fine to implement, but showing de places inside of it, was very
+complicated, as well as displaying the places when clicked.
+- Details screen shows, random pictures, names, the names in Gaelic, the place type,
+latitude and longitude.
+
+## What I learned:
+Doing this project and the Maps in Ireland one, I have been learning a lot. Learning how to
+search for the issue in my code, learning how to read the documentation, learning that
+sometimes we have priority to implement a feature and others are not that important.
+Learning that libraries are very important and the most important thing, learning how to be
+patient. Helping others and asking for help is also a good thing to do.
+
 ## ⭐️ Attention:
 This project was developed using `Apple Maps`, if you want to run this project on Android with Google Maps, you will need to
 import the `Google Maps` package and change the `MapView` component to `GoogleMap` provider:

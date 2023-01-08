@@ -26,7 +26,6 @@ export default function MarkerMap(props: { filter: any; }) {
     const [data, setData] = useState([]);
     const [searchField, setState] = useState('');
 
-
     // This fetches the data from the API
     useEffect(() => {
         fetch(API_PLACES_URL)
@@ -38,7 +37,6 @@ export default function MarkerMap(props: { filter: any; }) {
 
     return (
         <View>
-
             <MapView
                 style={styles.map}
                 initialRegion={INITIAL_POSITION}
